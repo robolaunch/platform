@@ -14,7 +14,7 @@ versions:
             description: "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png"
           base:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.24"
         - application:
@@ -24,7 +24,7 @@ versions:
             description: "This robolaunch environment, equipped with Ubuntu 22.04 and CUDA support, provides developers with flexibility across multiple programming languages. Effortlessly transition between languages in this streamlined platform, offering GPU-accelerated computing capabilities for diverse programming tasks."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png"
           base:
-            ubuntuDistro: jammy
+            ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.24"
         - application:
@@ -34,7 +34,7 @@ versions:
             description: "This robolaunch environment, armed with Ubuntu 20.04 and CUDA support, caters to developers seeking versatility across programming languages. Effortlessly transition between languages in this streamlined platform, bolstered by GPU-accelerated computing capabilities and enhanced with NVIDIA cuDNN support for optimized deep neural network tasks."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png"
           base:
-            ubuntuDistro: focal-cuda-12.0.0-cudnn
+            ubuntu: focal-cuda-12.0.0-cudnn
             desktop: xfce-amd64
             version: "0.2.6-alpha.24"
         - application:
@@ -44,7 +44,7 @@ versions:
             description: "This robolaunch environment, featuring Ubuntu 22.04 and CUDA support, is designed for developers requiring flexibility across programming languages. Seamlessly switch between languages in this efficient platform, fortified by GPU-accelerated computing and optimized for deep neural network tasks with NVIDIA cuDNN support."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png"
           base:
-            ubuntuDistro: jammy-cuda-12.0.0-cudnn
+            ubuntu: jammy-cuda-12.0.0-cudnn
             desktop: xfce-amd64
             version: "0.2.6-alpha.24"
       robotics:
@@ -58,7 +58,7 @@ versions:
             description: "Get hands-on with ROS 2 Foxy Fitzroy in this Kubernetes-based development setup. With ROS 2 pre-installed, it's geared for practical use by roboticists. GPU support enhances computational efficiency, and DDS connectivity ensures seamless data exchange between cloud and physical instances, making it an optimal choice for technical development in robotics."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ros-2-foxy-logo.png"
           base:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.24"
         - application:
@@ -68,7 +68,7 @@ versions:
             description: "Get hands-on with ROS 2 Galactic Geochelone in this Kubernetes-based development setup. With ROS 2 pre-installed, it's geared for practical use by roboticists. GPU support enhances computational efficiency, and DDS connectivity ensures seamless data exchange between cloud and physical instances, making it an optimal choice for technical development in robotics."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ros-2-galactic-logo.png"
           base:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.24"
         - application:
@@ -78,7 +78,7 @@ versions:
             description: "Get hands-on with ROS 2 Humble Hawksbill in this Kubernetes-based development setup. With ROS 2 pre-installed, it's geared for practical use by roboticists. GPU support enhances computational efficiency, and DDS connectivity ensures seamless data exchange between cloud and physical instances, making it an optimal choice for technical development in robotics."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ros-2-humble-logo.png"
           base:
-            ubuntuDistro: jammy
+            ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.24"
         - application:
@@ -88,7 +88,7 @@ versions:
             description: "Get hands-on with ROS 2 Iron Irwini in this Kubernetes-based development setup. With ROS 2 pre-installed, it's geared for practical use by roboticists. GPU support enhances computational efficiency, and DDS connectivity ensures seamless data exchange between cloud and physical instances, making it an optimal choice for technical development in robotics."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ros-2-iron-logo.png"
           base:
-            ubuntuDistro: jammy
+            ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.24"
       aiml:
@@ -102,7 +102,7 @@ versions:
             description: "Get hands-on with YOLOv4 in this Kubernetes-native environment on robolaunch. Train models with Torch, accelerate processing with GPU support, deploy inference servers seamlessly, and enjoy complete OpenCV support. Your go-to workspace for mastering YOLOv4."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/yolo-logo.png"
           base:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.24"
         - application:
@@ -112,7 +112,7 @@ versions:
             description: "Dive into YOLOv5 in this Kubernetes-native setup on robolaunch. Utilize Torch for model training, expedite processing with GPU support, deploy inference servers effortlessly, and benefit from comprehensive OpenCV support. Your practical workspace for mastering YOLOv5."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/yolo-logo.png"
           base:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.24"
         - application:
@@ -122,7 +122,7 @@ versions:
             description: "Immerse yourself in YOLOv7 with this Kubernetes-native setup on robolaunch. Employ Torch for model training, accelerate processing using GPU support, seamlessly deploy inference servers, and take advantage of comprehensive OpenCV support. Your practical workspace for mastering YOLOv7."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/yolo-logo.png"
           base:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.24"
       data-science:
@@ -136,7 +136,7 @@ versions:
             description: "Explore the capabilities of Apache Spark with PySpark in this dedicated environment on robolaunch. Designed for seamless integration, it's equipped for big data processing, allowing you to harness the power of Spark's distributed computing. Develop and execute PySpark applications effortlessly within this technical workspace tailored for robust data processing on robolaunch."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/apache-spark-logo.png"
           base:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.24"
         - application:
@@ -146,7 +146,7 @@ versions:
             description: "Explore the capabilities of Apache Spark with PySpark in this dedicated environment on robolaunch. Designed for seamless integration, it's equipped for big data processing, allowing you to harness the power of Spark's distributed computing. Develop and execute PySpark applications effortlessly within this technical workspace tailored for robust data processing on robolaunch."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/apache-spark-logo.png"
           base:
-            ubuntuDistro: jammy
+            ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.24"
         simulation:
@@ -157,7 +157,7 @@ versions:
             description: "Experience realistic simulations, develop algorithms, and test autonomous vehicle behaviors in a controlled virtual environment. This specialized workspace on robolaunch offers everything you need to explore and innovate within the field of autonomous driving simulation."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/carla-logo.png"
           base:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.24"
         - application:
@@ -167,7 +167,7 @@ versions:
             description: "Craft, prototype, and optimize your games or simulations seamlessly using Unity's powerful features. This dedicated workspace on robolaunch is tailored for building and testing Unity applications, providing a streamlined environment for your creative and technical endeavors."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/unity-logo.png"
           base:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.24"
   0.1.2-prerelease.10:
@@ -185,7 +185,7 @@ versions:
             description: "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png"
           base:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -195,7 +195,7 @@ versions:
             description: "This robolaunch environment, equipped with Ubuntu 22.04 and CUDA support, provides developers with flexibility across multiple programming languages. Effortlessly transition between languages in this streamlined platform, offering GPU-accelerated computing capabilities for diverse programming tasks."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png"
           base:
-            ubuntuDistro: jammy
+            ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -205,7 +205,7 @@ versions:
             description: "This robolaunch environment, armed with Ubuntu 20.04 and CUDA support, caters to developers seeking versatility across programming languages. Effortlessly transition between languages in this streamlined platform, bolstered by GPU-accelerated computing capabilities and enhanced with NVIDIA cuDNN support for optimized deep neural network tasks."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png"
           base:
-            ubuntuDistro: focal-cuda-12.0.0-cudnn
+            ubuntu: focal-cuda-12.0.0-cudnn
             desktop: xfce-amd64
             version: "0.2.6-alpha.19"
         - application:
@@ -215,7 +215,7 @@ versions:
             description: "This robolaunch environment, featuring Ubuntu 22.04 and CUDA support, is designed for developers requiring flexibility across programming languages. Seamlessly switch between languages in this efficient platform, fortified by GPU-accelerated computing and optimized for deep neural network tasks with NVIDIA cuDNN support."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png"
           base:
-            ubuntuDistro: jammy-cuda-12.0.0-cudnn
+            ubuntu: jammy-cuda-12.0.0-cudnn
             desktop: xfce-amd64
             version: "0.2.6-alpha.19"
       robotics:
@@ -229,7 +229,7 @@ versions:
             description: "Get hands-on with ROS 2 Foxy Fitzroy in this Kubernetes-based development setup. With ROS 2 pre-installed, it's geared for practical use by roboticists. GPU support enhances computational efficiency, and DDS connectivity ensures seamless data exchange between cloud and physical instances, making it an optimal choice for technical development in robotics."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ros-2-foxy-logo.png"
           base:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -239,7 +239,7 @@ versions:
             description: "Get hands-on with ROS 2 Galactic Geochelone in this Kubernetes-based development setup. With ROS 2 pre-installed, it's geared for practical use by roboticists. GPU support enhances computational efficiency, and DDS connectivity ensures seamless data exchange between cloud and physical instances, making it an optimal choice for technical development in robotics."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ros-2-galactic-logo.png"
           base:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -249,7 +249,7 @@ versions:
             description: "Get hands-on with ROS 2 Humble Hawksbill in this Kubernetes-based development setup. With ROS 2 pre-installed, it's geared for practical use by roboticists. GPU support enhances computational efficiency, and DDS connectivity ensures seamless data exchange between cloud and physical instances, making it an optimal choice for technical development in robotics."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ros-2-humble-logo.png"
           base:
-            ubuntuDistro: jammy
+            ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -259,7 +259,7 @@ versions:
             description: "Get hands-on with ROS 2 Iron Irwini in this Kubernetes-based development setup. With ROS 2 pre-installed, it's geared for practical use by roboticists. GPU support enhances computational efficiency, and DDS connectivity ensures seamless data exchange between cloud and physical instances, making it an optimal choice for technical development in robotics."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ros-2-iron-logo.png"
           base:
-            ubuntuDistro: jammy
+            ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.19"
       aiml:
@@ -273,7 +273,7 @@ versions:
             description: "Get hands-on with YOLOv4 in this Kubernetes-native environment on robolaunch. Train models with Torch, accelerate processing with GPU support, deploy inference servers seamlessly, and enjoy complete OpenCV support. Your go-to workspace for mastering YOLOv4."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/yolo-logo.png"
           base:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -283,7 +283,7 @@ versions:
             description: "Dive into YOLOv5 in this Kubernetes-native setup on robolaunch. Utilize Torch for model training, expedite processing with GPU support, deploy inference servers effortlessly, and benefit from comprehensive OpenCV support. Your practical workspace for mastering YOLOv5."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/yolo-logo.png"
           base:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -293,7 +293,7 @@ versions:
             description: "Immerse yourself in YOLOv7 with this Kubernetes-native setup on robolaunch. Employ Torch for model training, accelerate processing using GPU support, seamlessly deploy inference servers, and take advantage of comprehensive OpenCV support. Your practical workspace for mastering YOLOv7."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/yolo-logo.png"
           base:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.19"
       data-science:
@@ -307,7 +307,7 @@ versions:
             description: "Explore the capabilities of Apache Spark with PySpark in this dedicated environment on robolaunch. Designed for seamless integration, it's equipped for big data processing, allowing you to harness the power of Spark's distributed computing. Develop and execute PySpark applications effortlessly within this technical workspace tailored for robust data processing on robolaunch."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/apache-spark-logo.png"
           base:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -317,7 +317,7 @@ versions:
             description: "Explore the capabilities of Apache Spark with PySpark in this dedicated environment on robolaunch. Designed for seamless integration, it's equipped for big data processing, allowing you to harness the power of Spark's distributed computing. Develop and execute PySpark applications effortlessly within this technical workspace tailored for robust data processing on robolaunch."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/apache-spark-logo.png"
           base:
-            ubuntuDistro: jammy
+            ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.19"
       simulation:
@@ -331,7 +331,7 @@ versions:
             description: "Experience realistic simulations, develop algorithms, and test autonomous vehicle behaviors in a controlled virtual environment. This specialized workspace on robolaunch offers everything you need to explore and innovate within the field of autonomous driving simulation."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/carla-logo.png"
           base:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -341,6 +341,6 @@ versions:
             description: "Craft, prototype, and optimize your games or simulations seamlessly using Unity's powerful features. This dedicated workspace on robolaunch is tailored for building and testing Unity applications, providing a streamlined environment for your creative and technical endeavors."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/unity-logo.png"
           base:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.19"

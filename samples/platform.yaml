@@ -1,8 +1,9 @@
 ---
 platform: robolaunch Industrial Cloud Platform
-website: https://robolaunch.io
-github: github.com/robolaunch
-twitter: twitter.com/robolaunch
+contact:
+  website: https://robolaunch.io
+  github: github.com/robolaunch
+  x: x.com/robolaunch
 maintainers:
 - "@mkcetinkaya"
 - "@hgtunc"
