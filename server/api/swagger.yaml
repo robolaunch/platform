@@ -39,6 +39,16 @@ paths:
       summary: Get all active/available versions of robolaunch ICP
       description: All active versions of the robolaunch ICP are listed
       operationId: getPlatform
+      parameters:
+      - name: url
+        in: query
+        description: URL of manifest
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/platform.yaml
       responses:
         "200":
           description: successful operation
@@ -54,6 +64,16 @@ paths:
         ICP
       description: All active components of the robolaunch ICP are listed
       operationId: getPlatformComponents
+      parameters:
+      - name: url
+        in: query
+        description: URL of manifest
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/platform.yaml
       responses:
         "200":
           description: successful operation
@@ -70,6 +90,15 @@ paths:
         ICP
       operationId: getVersionedPlatformComponents
       parameters:
+      - name: url
+        in: query
+        description: URL of manifest
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/platform.yaml
       - name: version
         in: path
         description: Platform version
@@ -95,6 +124,15 @@ paths:
         of the robolaunch ICP
       operationId: getVersionedPlatformControlPlaneComponents
       parameters:
+      - name: url
+        in: query
+        description: URL of manifest
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/platform.yaml
       - name: version
         in: path
         description: Platform version
@@ -120,6 +158,15 @@ paths:
         of the robolaunch ICP
       operationId: getVersionedPlatformComputePlaneComponents
       parameters:
+      - name: url
+        in: query
+        description: URL of manifest
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/platform.yaml
       - name: version
         in: path
         description: Platform version
@@ -145,6 +192,15 @@ paths:
         robolaunch ICP
       operationId: getVersionedPlatformEdgeComponents
       parameters:
+      - name: url
+        in: query
+        description: URL of manifest
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/platform.yaml
       - name: version
         in: path
         description: Platform version
@@ -170,6 +226,16 @@ paths:
       description: Domains and environment are listed of every active/available version
         of the robolaunch ICP
       operationId: getPlatformImages
+      parameters:
+      - name: url
+        in: query
+        description: URL of manifest
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/platform.yaml
       responses:
         "200":
           description: successful operation
@@ -186,6 +252,15 @@ paths:
         of the robolaunch ICP
       operationId: getVersionedPlatformImages
       parameters:
+      - name: url
+        in: query
+        description: URL of manifest
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/platform.yaml
       - name: version
         in: path
         description: Platform version
@@ -211,6 +286,15 @@ paths:
         robolaunch ICP
       operationId: getEnvironmentsOfDomain
       parameters:
+      - name: url
+        in: query
+        description: URL of manifest
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/platform.yaml
       - name: version
         in: path
         description: Platform version
@@ -246,6 +330,15 @@ paths:
         robolaunch ICP in a specific domain
       operationId: getEnvironment
       parameters:
+      - name: url
+        in: query
+        description: URL of manifest
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/platform.yaml
       - name: version
         in: path
         description: Platform version
