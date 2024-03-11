@@ -10,10 +10,57 @@
 package swagger
 
 import (
+	"io"
 	"net/http"
+
+	"github.com/robolaunch/platform/server/pkg/models"
+	"gopkg.in/yaml.v2"
 )
 
 func GetPlatform(w http.ResponseWriter, r *http.Request) {
+	url := r.URL.Query().Get("url")
+
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
+	w.Write(structToJSONByteArray(GetPlatformResponse(url)))
+}
+
+func GetPlatformResponse(url string) models.ResponseRobolaunch {
+
+	robolaunch, err := GetStructuredPlatform(url)
+	if err != nil {
+		return models.ResponseRobolaunch{
+			Success: false,
+			Message: err.Error(),
+		}
+	}
+
+	return models.ResponseRobolaunch{
+		Success:  true,
+		Message:  "Request is successful.",
+		Response: &robolaunch,
+	}
+}
+
+func GetStructuredPlatform(url string) (models.Robolaunch, error) {
+
+	robolaunch := models.Robolaunch{}
+
+	response, err := http.Get(url)
+	if err != nil {
+		return models.Robolaunch{}, err
+	}
+	defer response.Body.Close()
+
+	manifest, err := io.ReadAll(response.Body)
+	if err != nil {
+		return models.Robolaunch{}, err
+	}
+
+	err = yaml.Unmarshal(manifest, &robolaunch)
+	if err != nil {
+		return models.Robolaunch{}, err
+	}
+
+	return robolaunch, nil
 }
