@@ -466,7 +466,6 @@ components:
       example:
         versions:
           key:
-            edge: null
             controlPlane:
               kubernetes:
                 version: 1.27.4
@@ -483,7 +482,6 @@ components:
                     name: name
                     repository: https://robolaunch.github.io/charts/
                     version: 0.2.7-alpha.1
-            computePlane: null
     PlatformImages:
       type: object
       properties:
@@ -538,7 +536,6 @@ components:
         edge:
           $ref: '#/components/schemas/PlaneComponents'
       example:
-        edge: null
         controlPlane:
           kubernetes:
             version: 1.27.4
@@ -555,7 +552,6 @@ components:
                 name: name
                 repository: https://robolaunch.github.io/charts/
                 version: 0.2.7-alpha.1
-        computePlane: null
     VersionedPlatformImages:
       type: object
       properties:
@@ -618,8 +614,8 @@ components:
           type: string
           example: 0.1.2-prerelease.10
         docs:
-          pattern: "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\\
-            b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$"
+          pattern: "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\\
+            b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)"
           type: string
           example: https://docs.robolaunch.cloud
       example:
@@ -680,18 +676,18 @@ components:
           type: string
           example: v0.2.7-alpha.1
         repository:
-          pattern: "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\\
-            b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$"
+          pattern: "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\\
+            b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)"
           type: string
           example: https://github.com/robolaunch/robot-operator
         docs:
-          pattern: "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\\
-            b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$"
+          pattern: "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\\
+            b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)"
           type: string
           example: https://robolaunch.github.io/robot-operator/#/
         release:
-          pattern: "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\\
-            b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$"
+          pattern: "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\\
+            b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)"
           type: string
           example: https://raw.githubusercontent.com/robolaunch/robot-operator/v0.2.7-alpha.1/hack/deploy/manifests/robot_operator.yaml
         helm:
@@ -722,8 +718,8 @@ components:
         name:
           type: string
         repository:
-          pattern: "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\\
-            b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$"
+          pattern: "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\\
+            b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)"
           type: string
           example: https://robolaunch.github.io/charts/
         version:
@@ -906,7 +902,6 @@ components:
         response:
           versions:
             key:
-              edge: null
               controlPlane:
                 kubernetes:
                   version: 1.27.4
@@ -923,7 +918,6 @@ components:
                       name: name
                       repository: https://robolaunch.github.io/charts/
                       version: 0.2.7-alpha.1
-              computePlane: null
         message: message
     ResponseVersionedPlatformComponents:
       required:
@@ -943,7 +937,6 @@ components:
       example:
         success: true
         response:
-          edge: null
           controlPlane:
             kubernetes:
               version: 1.27.4
@@ -960,7 +953,6 @@ components:
                   name: name
                   repository: https://robolaunch.github.io/charts/
                   version: 0.2.7-alpha.1
-          computePlane: null
         message: message
     ResponsePlaneComponents:
       required:
