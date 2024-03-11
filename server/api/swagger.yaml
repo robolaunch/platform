@@ -768,15 +768,16 @@ components:
       - success
       type: object
       properties:
-        status:
+        success:
           type: boolean
           description: Success of the request.
         message:
           type: string
-          description: The user name.
+          description: Response message.
         response:
           $ref: '#/components/schemas/Robolaunch'
       example:
+        success: true
         response:
           maintainers:
           - '@tunahanertekin'
@@ -792,7 +793,6 @@ components:
             key: github.com/robolaunch
           platform: robolaunch Industry Cloud Platform
         message: message
-        status: true
     ResponsePlatformComponents:
       required:
       - message
@@ -800,15 +800,16 @@ components:
       - success
       type: object
       properties:
-        status:
+        success:
           type: boolean
           description: Success of the request.
         message:
           type: string
-          description: The user name.
+          description: Response message.
         response:
           $ref: '#/components/schemas/PlatformComponents'
       example:
+        success: true
         response:
           versions:
             key:
@@ -831,7 +832,6 @@ components:
                       version: 0.2.7-alpha.1
               computePlane: null
         message: message
-        status: true
     ResponseVersionedPlatformComponents:
       required:
       - message
@@ -839,15 +839,16 @@ components:
       - success
       type: object
       properties:
-        status:
+        success:
           type: boolean
           description: Success of the request.
         message:
           type: string
-          description: The user name.
+          description: Response message.
         response:
           $ref: '#/components/schemas/VersionedPlatformComponents'
       example:
+        success: true
         response:
           edge: null
           controlPlane:
@@ -868,7 +869,6 @@ components:
                   version: 0.2.7-alpha.1
           computePlane: null
         message: message
-        status: true
     ResponsePlaneComponents:
       required:
       - message
@@ -876,15 +876,16 @@ components:
       - success
       type: object
       properties:
-        status:
+        success:
           type: boolean
           description: Success of the request.
         message:
           type: string
-          description: The user name.
+          description: Response message.
         response:
           $ref: '#/components/schemas/PlaneComponents'
       example:
+        success: true
         response:
           kubernetes:
             version: 1.27.4
@@ -902,7 +903,6 @@ components:
                 repository: https://robolaunch.github.io/charts/
                 version: 0.2.7-alpha.1
         message: message
-        status: true
     ResponsePlatformImages:
       required:
       - message
@@ -910,15 +910,16 @@ components:
       - success
       type: object
       properties:
-        status:
+        success:
           type: boolean
           description: Success of the request.
         message:
           type: string
-          description: The user name.
+          description: Response message.
         response:
           $ref: '#/components/schemas/PlatformImages'
       example:
+        success: true
         response:
           versions:
             key:
@@ -953,7 +954,6 @@ components:
                     "Embark on your journey in robotics with the dedicated environment on robolaunch. Whether you're exploring algorithms, building prototypes, or testing simulations, this workspace provides the tools and resources to bring your robotic projects to life. Dive into the world of robotics development and unleash your creativity in this specialized environment on robolaunch."
               repository: devspace
         message: message
-        status: true
     ResponseVersionedPlatformImages:
       required:
       - message
@@ -961,15 +961,16 @@ components:
       - success
       type: object
       properties:
-        status:
+        success:
           type: boolean
           description: Success of the request.
         message:
           type: string
-          description: The user name.
+          description: Response message.
         response:
           $ref: '#/components/schemas/VersionedPlatformImages'
       example:
+        success: true
         response:
           organization: robolaunchio
           domains:
@@ -1002,7 +1003,6 @@ components:
                 "Embark on your journey in robotics with the dedicated environment on robolaunch. Whether you're exploring algorithms, building prototypes, or testing simulations, this workspace provides the tools and resources to bring your robotic projects to life. Dive into the world of robotics development and unleash your creativity in this specialized environment on robolaunch."
           repository: devspace
         message: message
-        status: true
     ResponseDomain:
       required:
       - message
@@ -1010,15 +1010,16 @@ components:
       - success
       type: object
       properties:
-        status:
+        success:
           type: boolean
           description: Success of the request.
         message:
           type: string
-          description: The user name.
+          description: Response message.
         response:
           $ref: '#/components/schemas/Domain'
       example:
+        success: true
         response:
           environments:
           - application:
@@ -1047,7 +1048,6 @@ components:
           description: |
             "Embark on your journey in robotics with the dedicated environment on robolaunch. Whether you're exploring algorithms, building prototypes, or testing simulations, this workspace provides the tools and resources to bring your robotic projects to life. Dive into the world of robotics development and unleash your creativity in this specialized environment on robolaunch."
         message: message
-        status: true
     ResponseEnvironment:
       required:
       - message
@@ -1055,15 +1055,16 @@ components:
       - success
       type: object
       properties:
-        status:
+        success:
           type: boolean
           description: Success of the request.
         message:
           type: string
-          description: The user name.
+          description: Response message.
         response:
           $ref: '#/components/schemas/Environment'
       example:
+        success: true
         response:
           application:
             name: plain
@@ -1077,4 +1078,3 @@ components:
             ubuntu: focal
             version: 0.2.6-alpha.24
         message: message
-        status: true
