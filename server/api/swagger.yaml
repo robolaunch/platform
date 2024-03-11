@@ -73,7 +73,7 @@ paths:
         explode: true
         schema:
           type: string
-          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/platform.yaml
+          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/components.yaml
       responses:
         "200":
           description: successful operation
@@ -98,7 +98,7 @@ paths:
         explode: true
         schema:
           type: string
-          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/platform.yaml
+          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/components.yaml
       - name: version
         in: path
         description: Platform version
@@ -132,7 +132,7 @@ paths:
         explode: true
         schema:
           type: string
-          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/platform.yaml
+          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/components.yaml
       - name: version
         in: path
         description: Platform version
@@ -166,7 +166,7 @@ paths:
         explode: true
         schema:
           type: string
-          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/platform.yaml
+          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/components.yaml
       - name: version
         in: path
         description: Platform version
@@ -200,7 +200,7 @@ paths:
         explode: true
         schema:
           type: string
-          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/platform.yaml
+          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/components.yaml
       - name: version
         in: path
         description: Platform version
@@ -235,7 +235,7 @@ paths:
         explode: true
         schema:
           type: string
-          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/platform.yaml
+          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/images.yaml
       responses:
         "200":
           description: successful operation
@@ -260,7 +260,7 @@ paths:
         explode: true
         schema:
           type: string
-          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/platform.yaml
+          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/images.yaml
       - name: version
         in: path
         description: Platform version
@@ -294,7 +294,7 @@ paths:
         explode: true
         schema:
           type: string
-          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/platform.yaml
+          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/images.yaml
       - name: version
         in: path
         description: Platform version
@@ -338,7 +338,7 @@ paths:
         explode: true
         schema:
           type: string
-          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/platform.yaml
+          example: https://raw.githubusercontent.com/robolaunch/platform/main/samples/images.yaml
       - name: version
         in: path
         description: Platform version
