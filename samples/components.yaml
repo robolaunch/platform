@@ -5,23 +5,25 @@ versions:
         version: 1.27.4
       components:
         ui:
-          name: ""
-          tag: ""
+          name: robolaunch UI
+          tag: v0.1.0-alpha.1
           repository: https://github.com/robolaunch/ui
-          docs: ""
-          release: ""
+          docs: https://robolaunch.github.io/ui
+          release: https://github.com/robolaunch/ui/release
           helm:
-            repository: ""
-            version: ""
+            name: robolaunch-ui
+            repository: https://robolaunch.github.io/charts/
+            version: 0.1.0-alpha.1
         backend:
-          name: ""
-          tag: ""
-          repository: ""
-          release: ""
-          docs: ""
+          name: robolaunch Backend
+          tag: v0.1.0-alpha.1
+          repository: https://github.com/robolaunch/backend
+          docs: https://robolaunch.github.io/backend
+          release: https://github.com/robolaunch/backend/release
           helm:
-            repository: ""
-            version: ""
+            name: robolaunch-backend
+            repository: https://robolaunch.github.io/charts/
+            version: 0.1.0-alpha.1
     computePlane:
       kubernetes:
         version: 1.27.4
@@ -96,23 +98,25 @@ versions:
         version: 1.27.4
       components:
         ui:
-          name: "roboloaunch UI"
-          tag: ""
+          name: robolaunch UI
+          tag: v0.1.0-alpha.1
           repository: https://github.com/robolaunch/ui
-          docs: ""
-          release: ""
+          docs: https://robolaunch.github.io/ui
+          release: https://github.com/robolaunch/ui/release
           helm:
-            repository: ""
-            version: ""
+            name: robolaunch-ui
+            repository: https://robolaunch.github.io/charts/
+            version: 0.1.0-alpha.1
         backend:
-          name: "roboloaunch Backend"
-          tag: ""
-          repository: ""
-          release: ""
-          docs: ""
+          name: robolaunch Backend
+          tag: v0.1.0-alpha.1
+          repository: https://github.com/robolaunch/backend
+          docs: https://robolaunch.github.io/backend
+          release: https://github.com/robolaunch/backend/release
           helm:
-            repository: ""
-            version: ""
+            name: robolaunch-backend
+            repository: https://robolaunch.github.io/charts/
+            version: 0.1.0-alpha.1
     computePlane:
       kubernetes:
         version: 1.27.4
