@@ -442,20 +442,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/VersionMeta'
-      example:
-        maintainers:
-        - '@tunahanertekin'
-        - '@tunahanertekin'
-        versions:
-        - date: 2024-02-05
-          docs: https://docs.robolaunch.cloud
-          version: 0.1.2-prerelease.10
-        - date: 2024-02-05
-          docs: https://docs.robolaunch.cloud
-          version: 0.1.2-prerelease.10
-        contact:
-          key: github.com/robolaunch
-        platform: robolaunch Industry Cloud Platform
     PlatformComponents:
       type: object
       properties:
@@ -463,25 +449,6 @@ components:
           type: object
           additionalProperties:
             $ref: '#/components/schemas/VersionedPlatformComponents'
-      example:
-        versions:
-          key:
-            controlPlane:
-              kubernetes:
-                version: 1.27.4
-              components:
-                key:
-                  docs: https://robolaunch.github.io/robot-operator/#/
-                  release: https://raw.githubusercontent.com/robolaunch/robot-operator/v0.2.7-alpha.1/hack/deploy/manifests/robot_operator.yaml
-                  name: robolaunch Kubernetes Robot Operator
-                  resources:
-                    key: resources
-                  tag: v0.2.7-alpha.1
-                  repository: https://github.com/robolaunch/robot-operator
-                  helm:
-                    name: name
-                    repository: https://robolaunch.github.io/charts/
-                    version: 0.2.7-alpha.1
     PlatformImages:
       type: object
       properties:
@@ -489,39 +456,6 @@ components:
           type: object
           additionalProperties:
             $ref: '#/components/schemas/VersionedPlatformImages'
-      example:
-        versions:
-          key:
-            organization: robolaunchio
-            domains:
-              key:
-                environments:
-                - application:
-                    name: plain
-                    icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
-                    alias: Ubuntu 20.04
-                    description: |
-                      "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
-                    version: 0.1.0
-                  base:
-                    desktop: xfce
-                    ubuntu: focal
-                    version: 0.2.6-alpha.24
-                - application:
-                    name: plain
-                    icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
-                    alias: Ubuntu 20.04
-                    description: |
-                      "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
-                    version: 0.1.0
-                  base:
-                    desktop: xfce
-                    ubuntu: focal
-                    version: 0.2.6-alpha.24
-                alias: Robotics
-                description: |
-                  "Embark on your journey in robotics with the dedicated environment on robolaunch. Whether you're exploring algorithms, building prototypes, or testing simulations, this workspace provides the tools and resources to bring your robotic projects to life. Dive into the world of robotics development and unleash your creativity in this specialized environment on robolaunch."
-            repository: devspace
     VersionedPlatformComponents:
       required:
       - computePlane
@@ -535,23 +469,6 @@ components:
           $ref: '#/components/schemas/PlaneComponents'
         edge:
           $ref: '#/components/schemas/PlaneComponents'
-      example:
-        controlPlane:
-          kubernetes:
-            version: 1.27.4
-          components:
-            key:
-              docs: https://robolaunch.github.io/robot-operator/#/
-              release: https://raw.githubusercontent.com/robolaunch/robot-operator/v0.2.7-alpha.1/hack/deploy/manifests/robot_operator.yaml
-              name: robolaunch Kubernetes Robot Operator
-              resources:
-                key: resources
-              tag: v0.2.7-alpha.1
-              repository: https://github.com/robolaunch/robot-operator
-              helm:
-                name: name
-                repository: https://robolaunch.github.io/charts/
-                version: 0.2.7-alpha.1
     VersionedPlatformImages:
       type: object
       properties:
@@ -565,37 +482,6 @@ components:
           type: object
           additionalProperties:
             $ref: '#/components/schemas/Domain'
-      example:
-        organization: robolaunchio
-        domains:
-          key:
-            environments:
-            - application:
-                name: plain
-                icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
-                alias: Ubuntu 20.04
-                description: |
-                  "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
-                version: 0.1.0
-              base:
-                desktop: xfce
-                ubuntu: focal
-                version: 0.2.6-alpha.24
-            - application:
-                name: plain
-                icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
-                alias: Ubuntu 20.04
-                description: |
-                  "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
-                version: 0.1.0
-              base:
-                desktop: xfce
-                ubuntu: focal
-                version: 0.2.6-alpha.24
-            alias: Robotics
-            description: |
-              "Embark on your journey in robotics with the dedicated environment on robolaunch. Whether you're exploring algorithms, building prototypes, or testing simulations, this workspace provides the tools and resources to bring your robotic projects to life. Dive into the world of robotics development and unleash your creativity in this specialized environment on robolaunch."
-        repository: devspace
     VersionMeta:
       required:
       - date
@@ -618,10 +504,6 @@ components:
             b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)"
           type: string
           example: https://docs.robolaunch.cloud
-      example:
-        date: 2024-02-05
-        docs: https://docs.robolaunch.cloud
-        version: 0.1.2-prerelease.10
     PlaneComponents:
       required:
       - components
@@ -634,22 +516,6 @@ components:
           type: object
           additionalProperties:
             $ref: '#/components/schemas/Component'
-      example:
-        kubernetes:
-          version: 1.27.4
-        components:
-          key:
-            docs: https://robolaunch.github.io/robot-operator/#/
-            release: https://raw.githubusercontent.com/robolaunch/robot-operator/v0.2.7-alpha.1/hack/deploy/manifests/robot_operator.yaml
-            name: robolaunch Kubernetes Robot Operator
-            resources:
-              key: resources
-            tag: v0.2.7-alpha.1
-            repository: https://github.com/robolaunch/robot-operator
-            helm:
-              name: name
-              repository: https://robolaunch.github.io/charts/
-              version: 0.2.7-alpha.1
     Kubernetes:
       required:
       - version
@@ -658,8 +524,6 @@ components:
         version:
           type: string
           example: 1.27.4
-      example:
-        version: 1.27.4
     Component:
       required:
       - docs
@@ -696,18 +560,6 @@ components:
           type: object
           additionalProperties:
             type: string
-      example:
-        docs: https://robolaunch.github.io/robot-operator/#/
-        release: https://raw.githubusercontent.com/robolaunch/robot-operator/v0.2.7-alpha.1/hack/deploy/manifests/robot_operator.yaml
-        name: robolaunch Kubernetes Robot Operator
-        resources:
-          key: resources
-        tag: v0.2.7-alpha.1
-        repository: https://github.com/robolaunch/robot-operator
-        helm:
-          name: name
-          repository: https://robolaunch.github.io/charts/
-          version: 0.2.7-alpha.1
     HelmChart:
       required:
       - name
@@ -728,10 +580,6 @@ components:
             +([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
           type: string
           example: 0.2.7-alpha.1
-      example:
-        name: name
-        repository: https://robolaunch.github.io/charts/
-        version: 0.2.7-alpha.1
     Domain:
       type: object
       properties:
@@ -746,33 +594,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Environment'
-      example:
-        environments:
-        - application:
-            name: plain
-            icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
-            alias: Ubuntu 20.04
-            description: |
-              "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
-            version: 0.1.0
-          base:
-            desktop: xfce
-            ubuntu: focal
-            version: 0.2.6-alpha.24
-        - application:
-            name: plain
-            icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
-            alias: Ubuntu 20.04
-            description: |
-              "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
-            version: 0.1.0
-          base:
-            desktop: xfce
-            ubuntu: focal
-            version: 0.2.6-alpha.24
-        alias: Robotics
-        description: |
-          "Embark on your journey in robotics with the dedicated environment on robolaunch. Whether you're exploring algorithms, building prototypes, or testing simulations, this workspace provides the tools and resources to bring your robotic projects to life. Dive into the world of robotics development and unleash your creativity in this specialized environment on robolaunch."
     Environment:
       required:
       - application
@@ -783,18 +604,6 @@ components:
           $ref: '#/components/schemas/Application'
         base:
           $ref: '#/components/schemas/Base'
-      example:
-        application:
-          name: plain
-          icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
-          alias: Ubuntu 20.04
-          description: |
-            "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
-          version: 0.1.0
-        base:
-          desktop: xfce
-          ubuntu: focal
-          version: 0.2.6-alpha.24
     Application:
       required:
       - alias
@@ -820,13 +629,6 @@ components:
         icon:
           type: string
           example: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
-      example:
-        name: plain
-        icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
-        alias: Ubuntu 20.04
-        description: |
-          "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
-        version: 0.1.0
     Base:
       required:
       - desktop
@@ -846,10 +648,6 @@ components:
             +([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
           type: string
           example: 0.2.6-alpha.24
-      example:
-        desktop: xfce
-        ubuntu: focal
-        version: 0.2.6-alpha.24
     ResponseRobolaunch:
       required:
       - message
@@ -865,23 +663,6 @@ components:
           description: Response message.
         response:
           $ref: '#/components/schemas/Robolaunch'
-      example:
-        success: true
-        response:
-          maintainers:
-          - '@tunahanertekin'
-          - '@tunahanertekin'
-          versions:
-          - date: 2024-02-05
-            docs: https://docs.robolaunch.cloud
-            version: 0.1.2-prerelease.10
-          - date: 2024-02-05
-            docs: https://docs.robolaunch.cloud
-            version: 0.1.2-prerelease.10
-          contact:
-            key: github.com/robolaunch
-          platform: robolaunch Industry Cloud Platform
-        message: message
     ResponsePlatformComponents:
       required:
       - message
@@ -897,28 +678,6 @@ components:
           description: Response message.
         response:
           $ref: '#/components/schemas/PlatformComponents'
-      example:
-        success: true
-        response:
-          versions:
-            key:
-              controlPlane:
-                kubernetes:
-                  version: 1.27.4
-                components:
-                  key:
-                    docs: https://robolaunch.github.io/robot-operator/#/
-                    release: https://raw.githubusercontent.com/robolaunch/robot-operator/v0.2.7-alpha.1/hack/deploy/manifests/robot_operator.yaml
-                    name: robolaunch Kubernetes Robot Operator
-                    resources:
-                      key: resources
-                    tag: v0.2.7-alpha.1
-                    repository: https://github.com/robolaunch/robot-operator
-                    helm:
-                      name: name
-                      repository: https://robolaunch.github.io/charts/
-                      version: 0.2.7-alpha.1
-        message: message
     ResponseVersionedPlatformComponents:
       required:
       - message
@@ -934,26 +693,6 @@ components:
           description: Response message.
         response:
           $ref: '#/components/schemas/VersionedPlatformComponents'
-      example:
-        success: true
-        response:
-          controlPlane:
-            kubernetes:
-              version: 1.27.4
-            components:
-              key:
-                docs: https://robolaunch.github.io/robot-operator/#/
-                release: https://raw.githubusercontent.com/robolaunch/robot-operator/v0.2.7-alpha.1/hack/deploy/manifests/robot_operator.yaml
-                name: robolaunch Kubernetes Robot Operator
-                resources:
-                  key: resources
-                tag: v0.2.7-alpha.1
-                repository: https://github.com/robolaunch/robot-operator
-                helm:
-                  name: name
-                  repository: https://robolaunch.github.io/charts/
-                  version: 0.2.7-alpha.1
-        message: message
     ResponsePlaneComponents:
       required:
       - message
@@ -969,25 +708,6 @@ components:
           description: Response message.
         response:
           $ref: '#/components/schemas/PlaneComponents'
-      example:
-        success: true
-        response:
-          kubernetes:
-            version: 1.27.4
-          components:
-            key:
-              docs: https://robolaunch.github.io/robot-operator/#/
-              release: https://raw.githubusercontent.com/robolaunch/robot-operator/v0.2.7-alpha.1/hack/deploy/manifests/robot_operator.yaml
-              name: robolaunch Kubernetes Robot Operator
-              resources:
-                key: resources
-              tag: v0.2.7-alpha.1
-              repository: https://github.com/robolaunch/robot-operator
-              helm:
-                name: name
-                repository: https://robolaunch.github.io/charts/
-                version: 0.2.7-alpha.1
-        message: message
     ResponsePlatformImages:
       required:
       - message
@@ -1003,42 +723,6 @@ components:
           description: Response message.
         response:
           $ref: '#/components/schemas/PlatformImages'
-      example:
-        success: true
-        response:
-          versions:
-            key:
-              organization: robolaunchio
-              domains:
-                key:
-                  environments:
-                  - application:
-                      name: plain
-                      icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
-                      alias: Ubuntu 20.04
-                      description: |
-                        "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
-                      version: 0.1.0
-                    base:
-                      desktop: xfce
-                      ubuntu: focal
-                      version: 0.2.6-alpha.24
-                  - application:
-                      name: plain
-                      icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
-                      alias: Ubuntu 20.04
-                      description: |
-                        "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
-                      version: 0.1.0
-                    base:
-                      desktop: xfce
-                      ubuntu: focal
-                      version: 0.2.6-alpha.24
-                  alias: Robotics
-                  description: |
-                    "Embark on your journey in robotics with the dedicated environment on robolaunch. Whether you're exploring algorithms, building prototypes, or testing simulations, this workspace provides the tools and resources to bring your robotic projects to life. Dive into the world of robotics development and unleash your creativity in this specialized environment on robolaunch."
-              repository: devspace
-        message: message
     ResponseVersionedPlatformImages:
       required:
       - message
@@ -1054,40 +738,6 @@ components:
           description: Response message.
         response:
           $ref: '#/components/schemas/VersionedPlatformImages'
-      example:
-        success: true
-        response:
-          organization: robolaunchio
-          domains:
-            key:
-              environments:
-              - application:
-                  name: plain
-                  icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
-                  alias: Ubuntu 20.04
-                  description: |
-                    "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
-                  version: 0.1.0
-                base:
-                  desktop: xfce
-                  ubuntu: focal
-                  version: 0.2.6-alpha.24
-              - application:
-                  name: plain
-                  icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
-                  alias: Ubuntu 20.04
-                  description: |
-                    "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
-                  version: 0.1.0
-                base:
-                  desktop: xfce
-                  ubuntu: focal
-                  version: 0.2.6-alpha.24
-              alias: Robotics
-              description: |
-                "Embark on your journey in robotics with the dedicated environment on robolaunch. Whether you're exploring algorithms, building prototypes, or testing simulations, this workspace provides the tools and resources to bring your robotic projects to life. Dive into the world of robotics development and unleash your creativity in this specialized environment on robolaunch."
-          repository: devspace
-        message: message
     ResponseDomain:
       required:
       - message
@@ -1103,36 +753,6 @@ components:
           description: Response message.
         response:
           $ref: '#/components/schemas/Domain'
-      example:
-        success: true
-        response:
-          environments:
-          - application:
-              name: plain
-              icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
-              alias: Ubuntu 20.04
-              description: |
-                "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
-              version: 0.1.0
-            base:
-              desktop: xfce
-              ubuntu: focal
-              version: 0.2.6-alpha.24
-          - application:
-              name: plain
-              icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
-              alias: Ubuntu 20.04
-              description: |
-                "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
-              version: 0.1.0
-            base:
-              desktop: xfce
-              ubuntu: focal
-              version: 0.2.6-alpha.24
-          alias: Robotics
-          description: |
-            "Embark on your journey in robotics with the dedicated environment on robolaunch. Whether you're exploring algorithms, building prototypes, or testing simulations, this workspace provides the tools and resources to bring your robotic projects to life. Dive into the world of robotics development and unleash your creativity in this specialized environment on robolaunch."
-        message: message
     ResponseEnvironment:
       required:
       - message
@@ -1148,18 +768,3 @@ components:
           description: Response message.
         response:
           $ref: '#/components/schemas/Environment'
-      example:
-        success: true
-        response:
-          application:
-            name: plain
-            icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
-            alias: Ubuntu 20.04
-            description: |
-              "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
-            version: 0.1.0
-          base:
-            desktop: xfce
-            ubuntu: focal
-            version: 0.2.6-alpha.24
-        message: message

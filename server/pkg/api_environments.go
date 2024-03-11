@@ -10,7 +10,11 @@
 package swagger
 
 import (
+	"io"
 	"net/http"
+
+	"github.com/robolaunch/platform/server/pkg/models"
+	"gopkg.in/yaml.v2"
 )
 
 func GetEnvironment(w http.ResponseWriter, r *http.Request) {
@@ -28,7 +32,47 @@ func GetPlatformImages(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 }
 
+func GetPlatformImagesResponse(url string) models.ResponsePlatformImages {
+	platformImages, err := GetStructuredPlatformImages(url)
+	if err != nil {
+		return models.ResponsePlatformImages{
+			Success: false,
+			Message: err.Error(),
+		}
+	}
+
+	return models.ResponsePlatformImages{
+		Success:  true,
+		Message:  "Domains and environment are listed of every active/available version of the robolaunch ICP.",
+		Response: &platformImages,
+	}
+
+}
+
 func GetVersionedPlatformImages(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
+}
+
+func GetStructuredPlatformImages(url string) (models.PlatformImages, error) {
+
+	robolaunch := models.PlatformImages{}
+
+	response, err := http.Get(url)
+	if err != nil {
+		return models.PlatformImages{}, err
+	}
+	defer response.Body.Close()
+
+	manifest, err := io.ReadAll(response.Body)
+	if err != nil {
+		return models.PlatformImages{}, err
+	}
+
+	err = yaml.Unmarshal(manifest, &robolaunch)
+	if err != nil {
+		return models.PlatformImages{}, err
+	}
+
+	return robolaunch, nil
 }

@@ -10,30 +10,215 @@
 package swagger
 
 import (
+	"io"
 	"net/http"
+	"net/url"
+
+	"github.com/robolaunch/platform/server/pkg/models"
+	"gopkg.in/yaml.v2"
 )
+
+// *****PlatformComponents*****
 
 func GetPlatformComponents(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
+	w.Write(structToJSONByteArray(GetPlatformComponentsResponse(r.URL.Query())))
 }
+
+func GetPlatformComponentsResponse(queryParams url.Values) models.ResponsePlatformComponents {
+
+	url := queryParams.Get("url")
+
+	platformComponents, err := GetStructuredPlatformComponents(url)
+	if err != nil {
+		return models.ResponsePlatformComponents{
+			Success: false,
+			Message: err.Error(),
+		}
+	}
+
+	return models.ResponsePlatformComponents{
+		Success:  true,
+		Message:  "All active components of the robolaunch ICP are listed.",
+		Response: &platformComponents,
+	}
+}
+
+// *****VersionedPlatformComponents*****
 
 func GetVersionedPlatformComponents(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
+	w.Write(structToJSONByteArray(GetVersionedPlatformComponentsResponse(r.URL.Query())))
 }
+
+func GetVersionedPlatformComponentsResponse(queryParams url.Values) models.ResponseVersionedPlatformComponents {
+
+	url := queryParams.Get("url")
+	version := queryParams.Get("version")
+
+	versionedPlatformComponents := models.VersionedPlatformComponents{}
+
+	platformComponents, err := GetStructuredPlatformComponents(url)
+	if err != nil {
+		return models.ResponseVersionedPlatformComponents{
+			Success: false,
+			Message: err.Error(),
+		}
+	}
+
+	if val, ok := platformComponents.Versions[version]; ok {
+		versionedPlatformComponents = val
+	} else {
+		return models.ResponseVersionedPlatformComponents{
+			Success: false,
+			Message: "Selected platform version '" + version + "' is not found.",
+		}
+	}
+
+	return models.ResponseVersionedPlatformComponents{
+		Success:  true,
+		Message:  "Components are listed of an active/available version of the robolaunch ICP.",
+		Response: &versionedPlatformComponents,
+	}
+}
+
+// *****VersionedPlatformComputePlaneComponents*****
 
 func GetVersionedPlatformComputePlaneComponents(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
+	w.Write(structToJSONByteArray(GetVersionedPlatformComputePlaneComponentsResponse(r.URL.Query())))
 }
+
+func GetVersionedPlatformComputePlaneComponentsResponse(queryParams url.Values) models.ResponsePlaneComponents {
+
+	url := queryParams.Get("url")
+	version := queryParams.Get("version")
+
+	versionedPlatformComponents := models.VersionedPlatformComponents{}
+
+	platformComponents, err := GetStructuredPlatformComponents(url)
+	if err != nil {
+		return models.ResponsePlaneComponents{
+			Success: false,
+			Message: err.Error(),
+		}
+	}
+
+	if val, ok := platformComponents.Versions[version]; ok {
+		versionedPlatformComponents = val
+	} else {
+		return models.ResponsePlaneComponents{
+			Success: false,
+			Message: "Selected platform version '" + version + "' is not found.",
+		}
+	}
+
+	return models.ResponsePlaneComponents{
+		Success:  true,
+		Message:  "Compute plane components are listed for an active/available version of the robolaunch ICP.",
+		Response: versionedPlatformComponents.ComputePlane,
+	}
+}
+
+// *****VersionedPlatformControlPlaneComponents*****
 
 func GetVersionedPlatformControlPlaneComponents(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
+	w.Write(structToJSONByteArray(GetVersionedPlatformControlPlaneComponentsResponse(r.URL.Query())))
 }
+
+func GetVersionedPlatformControlPlaneComponentsResponse(queryParams url.Values) models.ResponsePlaneComponents {
+
+	url := queryParams.Get("url")
+	version := queryParams.Get("version")
+
+	versionedPlatformComponents := models.VersionedPlatformComponents{}
+
+	platformComponents, err := GetStructuredPlatformComponents(url)
+	if err != nil {
+		return models.ResponsePlaneComponents{
+			Success: false,
+			Message: err.Error(),
+		}
+	}
+
+	if val, ok := platformComponents.Versions[version]; ok {
+		versionedPlatformComponents = val
+	} else {
+		return models.ResponsePlaneComponents{
+			Success: false,
+			Message: "Selected platform version '" + version + "' is not found.",
+		}
+	}
+
+	return models.ResponsePlaneComponents{
+		Success:  true,
+		Message:  "Control plane components are listed for an active/available version of the robolaunch ICP.",
+		Response: versionedPlatformComponents.ControlPlane,
+	}
+}
+
+// *****VersionedPlatformEdgeComponents*****
 
 func GetVersionedPlatformEdgeComponents(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
+}
+
+func GetVersionedPlatformEdgeComponentsResponse(queryParams url.Values) models.ResponsePlaneComponents {
+
+	url := queryParams.Get("url")
+	version := queryParams.Get("version")
+
+	versionedPlatformComponents := models.VersionedPlatformComponents{}
+
+	platformComponents, err := GetStructuredPlatformComponents(url)
+	if err != nil {
+		return models.ResponsePlaneComponents{
+			Success: false,
+			Message: err.Error(),
+		}
+	}
+
+	if val, ok := platformComponents.Versions[version]; ok {
+		versionedPlatformComponents = val
+	} else {
+		return models.ResponsePlaneComponents{
+			Success: false,
+			Message: "Selected platform version '" + version + "' is not found.",
+		}
+	}
+
+	return models.ResponsePlaneComponents{
+		Success:  true,
+		Message:  "Edge components are listed for an active/available version of the robolaunch ICP.",
+		Response: versionedPlatformComponents.ControlPlane,
+	}
+}
+
+func GetStructuredPlatformComponents(url string) (models.PlatformComponents, error) {
+
+	robolaunch := models.PlatformComponents{}
+
+	response, err := http.Get(url)
+	if err != nil {
+		return models.PlatformComponents{}, err
+	}
+	defer response.Body.Close()
+
+	manifest, err := io.ReadAll(response.Body)
+	if err != nil {
+		return models.PlatformComponents{}, err
+	}
+
+	err = yaml.Unmarshal(manifest, &robolaunch)
+	if err != nil {
+		return models.PlatformComponents{}, err
+	}
+
+	return robolaunch, nil
 }
