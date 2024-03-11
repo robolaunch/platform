@@ -45,7 +45,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Robolaunch'
+                $ref: '#/components/schemas/ResponseRobolaunch'
   /components:
     get:
       tags:
@@ -60,7 +60,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PlatformComponents'
+                $ref: '#/components/schemas/ResponsePlatformComponents'
   /components/{version}:
     get:
       tags:
@@ -85,7 +85,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/VersionedPlatformComponents'
+                $ref: '#/components/schemas/ResponseVersionedPlatformComponents'
   /components/{version}/control-plane:
     get:
       tags:
@@ -110,7 +110,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PlaneComponents'
+                $ref: '#/components/schemas/ResponsePlaneComponents'
   /components/{version}/compute-plane:
     get:
       tags:
@@ -135,7 +135,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PlaneComponents'
+                $ref: '#/components/schemas/ResponsePlaneComponents'
   /components/{version}/edge:
     get:
       tags:
@@ -160,7 +160,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PlaneComponents'
+                $ref: '#/components/schemas/ResponsePlaneComponents'
   /environments:
     get:
       tags:
@@ -176,7 +176,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PlatformImages'
+                $ref: '#/components/schemas/ResponsePlatformImages'
   /environments/{version}:
     get:
       tags:
@@ -201,7 +201,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/VersionedPlatformImages'
+                $ref: '#/components/schemas/ResponseVersionedPlatformImages'
   /environments/{version}/{domain}:
     get:
       tags:
@@ -235,7 +235,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Domain'
+                $ref: '#/components/schemas/ResponseDomain'
   /environments/{version}/{domain}/environment:
     get:
       tags:
@@ -320,7 +320,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Environment'
+                $ref: '#/components/schemas/ResponseEnvironment'
 components:
   schemas:
     Robolaunch:
@@ -761,3 +761,320 @@ components:
         desktop: xfce
         ubuntu: focal
         version: 0.2.6-alpha.24
+    ResponseRobolaunch:
+      required:
+      - message
+      - response
+      - success
+      type: object
+      properties:
+        status:
+          type: boolean
+          description: Success of the request.
+        message:
+          type: string
+          description: The user name.
+        response:
+          $ref: '#/components/schemas/Robolaunch'
+      example:
+        response:
+          maintainers:
+          - '@tunahanertekin'
+          - '@tunahanertekin'
+          versions:
+          - date: 2024-02-05
+            docs: https://docs.robolaunch.cloud
+            version: 0.1.2-prerelease.10
+          - date: 2024-02-05
+            docs: https://docs.robolaunch.cloud
+            version: 0.1.2-prerelease.10
+          contact:
+            key: github.com/robolaunch
+          platform: robolaunch Industry Cloud Platform
+        message: message
+        status: true
+    ResponsePlatformComponents:
+      required:
+      - message
+      - response
+      - success
+      type: object
+      properties:
+        status:
+          type: boolean
+          description: Success of the request.
+        message:
+          type: string
+          description: The user name.
+        response:
+          $ref: '#/components/schemas/PlatformComponents'
+      example:
+        response:
+          versions:
+            key:
+              edge: null
+              controlPlane:
+                kubernetes:
+                  version: 1.27.4
+                components:
+                  key:
+                    docs: https://robolaunch.github.io/robot-operator/#/
+                    release: https://raw.githubusercontent.com/robolaunch/robot-operator/v0.2.7-alpha.1/hack/deploy/manifests/robot_operator.yaml
+                    name: robolaunch Kubernetes Robot Operator
+                    resources:
+                      key: resources
+                    tag: v0.2.7-alpha.1
+                    repository: https://github.com/robolaunch/robot-operator
+                    helm:
+                      name: name
+                      repository: https://robolaunch.github.io/charts/
+                      version: 0.2.7-alpha.1
+              computePlane: null
+        message: message
+        status: true
+    ResponseVersionedPlatformComponents:
+      required:
+      - message
+      - response
+      - success
+      type: object
+      properties:
+        status:
+          type: boolean
+          description: Success of the request.
+        message:
+          type: string
+          description: The user name.
+        response:
+          $ref: '#/components/schemas/VersionedPlatformComponents'
+      example:
+        response:
+          edge: null
+          controlPlane:
+            kubernetes:
+              version: 1.27.4
+            components:
+              key:
+                docs: https://robolaunch.github.io/robot-operator/#/
+                release: https://raw.githubusercontent.com/robolaunch/robot-operator/v0.2.7-alpha.1/hack/deploy/manifests/robot_operator.yaml
+                name: robolaunch Kubernetes Robot Operator
+                resources:
+                  key: resources
+                tag: v0.2.7-alpha.1
+                repository: https://github.com/robolaunch/robot-operator
+                helm:
+                  name: name
+                  repository: https://robolaunch.github.io/charts/
+                  version: 0.2.7-alpha.1
+          computePlane: null
+        message: message
+        status: true
+    ResponsePlaneComponents:
+      required:
+      - message
+      - response
+      - success
+      type: object
+      properties:
+        status:
+          type: boolean
+          description: Success of the request.
+        message:
+          type: string
+          description: The user name.
+        response:
+          $ref: '#/components/schemas/PlaneComponents'
+      example:
+        response:
+          kubernetes:
+            version: 1.27.4
+          components:
+            key:
+              docs: https://robolaunch.github.io/robot-operator/#/
+              release: https://raw.githubusercontent.com/robolaunch/robot-operator/v0.2.7-alpha.1/hack/deploy/manifests/robot_operator.yaml
+              name: robolaunch Kubernetes Robot Operator
+              resources:
+                key: resources
+              tag: v0.2.7-alpha.1
+              repository: https://github.com/robolaunch/robot-operator
+              helm:
+                name: name
+                repository: https://robolaunch.github.io/charts/
+                version: 0.2.7-alpha.1
+        message: message
+        status: true
+    ResponsePlatformImages:
+      required:
+      - message
+      - response
+      - success
+      type: object
+      properties:
+        status:
+          type: boolean
+          description: Success of the request.
+        message:
+          type: string
+          description: The user name.
+        response:
+          $ref: '#/components/schemas/PlatformImages'
+      example:
+        response:
+          versions:
+            key:
+              organization: robolaunchio
+              domains:
+                key:
+                  environments:
+                  - application:
+                      name: plain
+                      icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
+                      alias: Ubuntu 20.04
+                      description: |
+                        "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
+                      version: 0.1.0
+                    base:
+                      desktop: xfce
+                      ubuntu: focal
+                      version: 0.2.6-alpha.24
+                  - application:
+                      name: plain
+                      icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
+                      alias: Ubuntu 20.04
+                      description: |
+                        "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
+                      version: 0.1.0
+                    base:
+                      desktop: xfce
+                      ubuntu: focal
+                      version: 0.2.6-alpha.24
+                  alias: Robotics
+                  description: |
+                    "Embark on your journey in robotics with the dedicated environment on robolaunch. Whether you're exploring algorithms, building prototypes, or testing simulations, this workspace provides the tools and resources to bring your robotic projects to life. Dive into the world of robotics development and unleash your creativity in this specialized environment on robolaunch."
+              repository: devspace
+        message: message
+        status: true
+    ResponseVersionedPlatformImages:
+      required:
+      - message
+      - response
+      - success
+      type: object
+      properties:
+        status:
+          type: boolean
+          description: Success of the request.
+        message:
+          type: string
+          description: The user name.
+        response:
+          $ref: '#/components/schemas/VersionedPlatformImages'
+      example:
+        response:
+          organization: robolaunchio
+          domains:
+            key:
+              environments:
+              - application:
+                  name: plain
+                  icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
+                  alias: Ubuntu 20.04
+                  description: |
+                    "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
+                  version: 0.1.0
+                base:
+                  desktop: xfce
+                  ubuntu: focal
+                  version: 0.2.6-alpha.24
+              - application:
+                  name: plain
+                  icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
+                  alias: Ubuntu 20.04
+                  description: |
+                    "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
+                  version: 0.1.0
+                base:
+                  desktop: xfce
+                  ubuntu: focal
+                  version: 0.2.6-alpha.24
+              alias: Robotics
+              description: |
+                "Embark on your journey in robotics with the dedicated environment on robolaunch. Whether you're exploring algorithms, building prototypes, or testing simulations, this workspace provides the tools and resources to bring your robotic projects to life. Dive into the world of robotics development and unleash your creativity in this specialized environment on robolaunch."
+          repository: devspace
+        message: message
+        status: true
+    ResponseDomain:
+      required:
+      - message
+      - response
+      - success
+      type: object
+      properties:
+        status:
+          type: boolean
+          description: Success of the request.
+        message:
+          type: string
+          description: The user name.
+        response:
+          $ref: '#/components/schemas/Domain'
+      example:
+        response:
+          environments:
+          - application:
+              name: plain
+              icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
+              alias: Ubuntu 20.04
+              description: |
+                "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
+              version: 0.1.0
+            base:
+              desktop: xfce
+              ubuntu: focal
+              version: 0.2.6-alpha.24
+          - application:
+              name: plain
+              icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
+              alias: Ubuntu 20.04
+              description: |
+                "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
+              version: 0.1.0
+            base:
+              desktop: xfce
+              ubuntu: focal
+              version: 0.2.6-alpha.24
+          alias: Robotics
+          description: |
+            "Embark on your journey in robotics with the dedicated environment on robolaunch. Whether you're exploring algorithms, building prototypes, or testing simulations, this workspace provides the tools and resources to bring your robotic projects to life. Dive into the world of robotics development and unleash your creativity in this specialized environment on robolaunch."
+        message: message
+        status: true
+    ResponseEnvironment:
+      required:
+      - message
+      - response
+      - success
+      type: object
+      properties:
+        status:
+          type: boolean
+          description: Success of the request.
+        message:
+          type: string
+          description: The user name.
+        response:
+          $ref: '#/components/schemas/Environment'
+      example:
+        response:
+          application:
+            name: plain
+            icon: https://raw.githubusercontent.com/robolaunch/trademark/main/applications/ubuntu-logo.png
+            alias: Ubuntu 20.04
+            description: |
+              "This robolaunch environment, featuring Ubuntu 20.04 and CUDA support, empowers developers with versatility across programming languages. Seamlessly switch between languages in this efficient platform, offering GPU-accelerated computing for a wide array of programming tasks."
+            version: 0.1.0
+          base:
+            desktop: xfce
+            ubuntu: focal
+            version: 0.2.6-alpha.24
+        message: message
+        status: true
