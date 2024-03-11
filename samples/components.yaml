@@ -1,101 +1,4 @@
 versions:
-  0.1.3-prerelease.1:
-    controlPlane:
-      kubernetes:
-        version: 1.27.4
-      components:
-        ui:
-          name: robolaunch UI
-          tag: v0.1.0-alpha.1
-          repository: https://github.com/robolaunch/ui
-          docs: https://robolaunch.github.io/ui
-          release: https://github.com/robolaunch/ui/release
-          helm:
-            name: robolaunch-ui
-            repository: https://robolaunch.github.io/charts/
-            version: 0.1.0-alpha.1
-        backend:
-          name: robolaunch Backend
-          tag: v0.1.0-alpha.1
-          repository: https://github.com/robolaunch/backend
-          docs: https://robolaunch.github.io/backend
-          release: https://github.com/robolaunch/backend/release
-          helm:
-            name: robolaunch-backend
-            repository: https://robolaunch.github.io/charts/
-            version: 0.1.0-alpha.1
-    computePlane:
-      kubernetes:
-        version: 1.27.4
-      components:
-        robot-operator:
-          name: "robolaunch Kubernetes Robot Operator"
-          tag: v0.2.7-alpha.1
-          repository: https://github.com/robolaunch/robot-operator
-          docs: https://robolaunch.github.io/robot-operator/#/
-          release: https://raw.githubusercontent.com/robolaunch/robot-operator/v0.2.7-alpha.1/hack/deploy/manifests/robot_operator.yaml
-          helm:
-            name: robot-operator
-            repository: https://robolaunch.github.io/charts/
-            version: 0.2.7-alpha.1
-        connection-hub-operator:
-          name: "robolaunch Kubernetes Connection Hub Operator"
-          tag: v0.1.7-alpha.11
-          repository: https://github.com/robolaunch/connection-hub-operator
-          docs: https://robolaunch.github.io/connection-hub-operator/#/
-          release: https://raw.githubusercontent.com/robolaunch/connection-hub-operator/v0.1.7-alpha.11/hack/deploy/manifests/connection_hub_operator.yaml
-          helm:
-            name: connection-hub-operator
-            repository: https://robolaunch.github.io/charts/
-            version: 0.1.7-alpha.11
-          resources:
-            cloudInstance: https://gist.githubusercontent.com/tunahanertekin/f041e2c3fbc6cdaadd72816c350b357c/raw/f0f79cbc65d6d7642f309cb05579b73ba75a2ddc/ch-ci.yaml
-        fleet-operator:
-          name: "robolaunch Kubernetes Fleet Operator"
-          tag: v0.1.6-alpha.14
-          repository: https://github.com/robolaunch/fleet-operator
-          docs: https://github.com/robolaunch/fleet-operator/blob/main/docs/reference.md
-          release: https://raw.githubusercontent.com/robolaunch/fleet-operator/v0.1.6-alpha.14/hack/deploy/manifests/fleet_operator.yaml
-          helm:
-            name: fleet-operator
-            repository: https://robolaunch.github.io/charts/
-            version: 0.1.6-alpha.14
-    edge:
-      kubernetes:
-        version: 1.27.4
-      components:
-        robot-operator:
-          name: "robolaunch Kubernetes Robot Operator"
-          tag: v0.2.7-alpha.1
-          repository: https://github.com/robolaunch/robot-operator
-          docs: https://robolaunch.github.io/robot-operator/#/
-          release: https://raw.githubusercontent.com/robolaunch/robot-operator/v0.2.7-alpha.1/hack/deploy/manifests/robot_operator.yaml
-          helm:
-            name: robot-operator
-            repository: https://robolaunch.github.io/charts/
-            version: 0.2.7-alpha.1
-        connection-hub-operator:
-          name: "robolaunch Kubernetes Connection Hub Operator"
-          tag: v0.1.7-alpha.11
-          repository: https://github.com/robolaunch/connection-hub-operator
-          docs: https://robolaunch.github.io/connection-hub-operator/#/
-          release: https://raw.githubusercontent.com/robolaunch/connection-hub-operator/v0.1.7-alpha.11/hack/deploy/manifests/connection_hub_operator.yaml
-          helm:
-            name: connection-hub-operator
-            repository: https://robolaunch.github.io/charts/
-            version: 0.1.7-alpha.11
-          resources:
-            cloudInstance: https://gist.githubusercontent.com/tunahanertekin/f041e2c3fbc6cdaadd72816c350b357c/raw/f0f79cbc65d6d7642f309cb05579b73ba75a2ddc/ch-ci.yaml
-        fleet-operator:
-          name: "robolaunch Kubernetes Fleet Operator"
-          tag: v0.1.6-alpha.14
-          repository: https://github.com/robolaunch/fleet-operator
-          docs: https://github.com/robolaunch/fleet-operator/blob/main/docs/reference.md
-          release: https://raw.githubusercontent.com/robolaunch/fleet-operator/v0.1.6-alpha.14/hack/deploy/manifests/fleet_operator.yaml
-          helm:
-            name: fleet-operator
-            repository: https://robolaunch.github.io/charts/
-            version: 0.1.6-alpha.14
   0.1.2-prerelease.10:
     controlPlane:
       kubernetes:
@@ -127,24 +30,24 @@ versions:
       components:
         robot-operator:
           name: "robolaunch Kubernetes Robot Operator"
-          tag: v0.2.7-alpha.1
+          tag: v0.2.6-alpha.19
           repository: https://github.com/robolaunch/robot-operator
           docs: https://robolaunch.github.io/robot-operator/#/
-          release: https://raw.githubusercontent.com/robolaunch/robot-operator/v0.2.7-alpha.1/hack/deploy/manifests/robot_operator.yaml
+          release: https://raw.githubusercontent.com/robolaunch/robot-operator/v0.2.6-alpha.19/hack/deploy/manifests/robot_operator.yaml
           helm:
             name: robot-operator
             repository: https://robolaunch.github.io/charts/
-            version: 0.2.7-alpha.1
+            version: 0.2.6-alpha.19
         connection-hub-operator:
           name: "robolaunch Kubernetes Connection Hub Operator"
-          tag: v0.1.7-alpha.11
+          tag: v0.1.7-alpha.10
           repository: https://github.com/robolaunch/connection-hub-operator
           docs: https://robolaunch.github.io/connection-hub-operator/#/
-          release: https://raw.githubusercontent.com/robolaunch/connection-hub-operator/v0.1.7-alpha.11/hack/deploy/manifests/connection_hub_operator.yaml
+          release: https://raw.githubusercontent.com/robolaunch/connection-hub-operator/v0.1.7-alpha.10/hack/deploy/manifests/connection_hub_operator.yaml
           helm:
             name: connection-hub-operator
             repository: https://robolaunch.github.io/charts/
-            version: 0.1.7-alpha.11
+            version: 0.1.7-alpha.10
           resources:
             cloudInstance: https://gist.githubusercontent.com/tunahanertekin/f041e2c3fbc6cdaadd72816c350b357c/raw/f0f79cbc65d6d7642f309cb05579b73ba75a2ddc/ch-ci.yaml
         fleet-operator:
