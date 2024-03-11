@@ -12,20 +12,21 @@ package swagger
 import (
 	"io"
 	"net/http"
+	"net/url"
 
 	"github.com/robolaunch/platform/server/pkg/models"
 	"gopkg.in/yaml.v2"
 )
 
 func GetPlatform(w http.ResponseWriter, r *http.Request) {
-	url := r.URL.Query().Get("url")
-
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
-	w.Write(structToJSONByteArray(GetPlatformResponse(url)))
+	w.Write(structToJSONByteArray(GetPlatformResponse(r.URL.Query())))
 }
 
-func GetPlatformResponse(url string) models.ResponseRobolaunch {
+func GetPlatformResponse(queryParams url.Values) models.ResponseRobolaunch {
+
+	url := queryParams.Get("url")
 
 	robolaunch, err := GetStructuredPlatform(url)
 	if err != nil {
@@ -37,7 +38,7 @@ func GetPlatformResponse(url string) models.ResponseRobolaunch {
 
 	return models.ResponseRobolaunch{
 		Success:  true,
-		Message:  "Request is successful.",
+		Message:  "All active versions of the robolaunch ICP are listed.",
 		Response: &robolaunch,
 	}
 }
