@@ -10,5 +10,5 @@
 package models
 
 type PlatformComponents struct {
-	Versions map[string]VersionedPlatformComponents `json:"versions,omitempty"`
+	Versions map[string]map[string]PlaneComponents `json:"versions,omitempty"`
 }
