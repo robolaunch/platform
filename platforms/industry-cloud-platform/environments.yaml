@@ -347,3 +347,17 @@ versions:
             ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.19"
+      tools:
+        alias: "Tools"
+        description: "Sample Description"
+        environments:
+        - application:
+            name: code-editor
+            version: "4.22.0"
+            alias: "Code Editor"
+            description: "Code editor for cloud environments."
+            icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/code-editor-logo.png"
+          base:
+            ubuntu: jammy
+            desktop: xfce
+            version: "0.2.6-alpha.19"
