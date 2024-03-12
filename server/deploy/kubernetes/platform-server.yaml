@@ -14,7 +14,7 @@ spec:
         apps: platform-server
     spec:
       containers:
-      - image: docker.io/robolaunchio/platform-server:52ca3fa2fd512f23500a15eea8792e67e0e6db00
+      - image: docker.io/robolaunchio/platform-server:<COMMIT-HASH-OR-TAG>
         name: platform-server
         ports:
         - containerPort: 8080
