@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: platform-server
+  namespace: platform-server
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      apps: platform-server
+  template:
+    metadata:
+      labels:
+        apps: platform-server
+    spec:
+      containers:
+      - image: docker.io/robolaunchio/platform-server:52ca3fa2fd512f23500a15eea8792e67e0e6db00
+        name: platform-server
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: platform-server
+  namespace: platform-server
+spec:
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    apps: platform-server
+  type: NodePort
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "7200"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "7200"
+  name: platform-server
+  namespace: platform-server
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: <PLATFORM-SERVER-DNS>
+    http:
+      paths:
+      - backend:
+          service:
+            name: platform-server
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - <PLATFORM-SERVER-DNS>
+    secretName: <TLS-SECRET>
