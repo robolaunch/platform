@@ -10,13 +10,11 @@
 package swagger
 
 import (
-	"io"
 	"net/http"
 	"net/url"
 
 	"github.com/gorilla/mux"
 	"github.com/robolaunch/platform/server/pkg/models"
-	"gopkg.in/yaml.v2"
 )
 
 // *****PlatformComponents*****
@@ -109,27 +107,4 @@ func GetVersionedPlatformPlaneComponentsResponse(pathParams map[string]string, q
 		Message:  "Selected plane components are listed for an active/available version of the robolaunch ICP.",
 		Response: &versionedPlatformPlaneComponents,
 	}
-}
-
-func GetStructuredPlatformComponents(url string) (models.PlatformComponents, error) {
-
-	robolaunch := models.PlatformComponents{}
-
-	response, err := http.Get(url)
-	if err != nil {
-		return models.PlatformComponents{}, err
-	}
-	defer response.Body.Close()
-
-	manifest, err := io.ReadAll(response.Body)
-	if err != nil {
-		return models.PlatformComponents{}, err
-	}
-
-	err = yaml.Unmarshal(manifest, &robolaunch)
-	if err != nil {
-		return models.PlatformComponents{}, err
-	}
-
-	return robolaunch, nil
 }
