@@ -86,8 +86,8 @@ func GetVersionedPlatformPlaneComponentsResponse(pathParams map[string]string, q
 		}
 	}
 
-	if vpc, ok := platformComponents.Versions[version]; ok {
-		if pc, ok2 := vpc[plane]; ok2 {
+	if vpc, vpcExists := platformComponents.Versions[version]; vpcExists {
+		if pc, pcExists := vpc[plane]; pcExists {
 			versionedPlatformPlaneComponents = pc
 		} else {
 			return models.ResponsePlaneComponents{
