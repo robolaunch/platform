@@ -1,6 +1,6 @@
 versions:
   0.1.2-prerelease.10:
-    controlPlane:
+    control-plane:
       kubernetes:
         version: 1.27.4
       components:
@@ -24,7 +24,7 @@ versions:
             name: robolaunch-backend
             repository: https://robolaunch.github.io/charts/
             version: 0.1.0-alpha.1
-    computePlane:
+    compute-plane:
       kubernetes:
         version: 1.27.4
       components:
