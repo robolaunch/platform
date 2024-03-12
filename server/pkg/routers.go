@@ -63,31 +63,10 @@ var routes = Routes{
 	},
 
 	Route{
-		"GetVersionedPlatformComponents",
+		"GetVersionedPlatformPlaneComponents",
 		strings.ToUpper("Get"),
-		"/api/v3/components/{version}",
-		GetVersionedPlatformComponents,
-	},
-
-	Route{
-		"GetVersionedPlatformComputePlaneComponents",
-		strings.ToUpper("Get"),
-		"/api/v3/components/{version}/compute-plane",
-		GetVersionedPlatformComputePlaneComponents,
-	},
-
-	Route{
-		"GetVersionedPlatformControlPlaneComponents",
-		strings.ToUpper("Get"),
-		"/api/v3/components/{version}/control-plane",
-		GetVersionedPlatformControlPlaneComponents,
-	},
-
-	Route{
-		"GetVersionedPlatformEdgeComponents",
-		strings.ToUpper("Get"),
-		"/api/v3/components/{version}/edge",
-		GetVersionedPlatformEdgeComponents,
+		"/api/v3/components/{version}/{plane}",
+		GetVersionedPlatformPlaneComponents,
 	},
 
 	Route{

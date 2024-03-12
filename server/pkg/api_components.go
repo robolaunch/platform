@@ -14,6 +14,7 @@ import (
 	"net/http"
 	"net/url"
 
+	"github.com/gorilla/mux"
 	"github.com/robolaunch/platform/server/pkg/models"
 	"gopkg.in/yaml.v2"
 )
@@ -45,59 +46,39 @@ func GetPlatformComponentsResponse(queryParams url.Values) models.ResponsePlatfo
 	}
 }
 
-// *****VersionedPlatformComponents*****
+// *****VersionedPlatformPlaneComponents*****
 
-func GetVersionedPlatformComponents(w http.ResponseWriter, r *http.Request) {
+func GetVersionedPlatformPlaneComponents(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
-	w.Write(structToJSONByteArray(GetVersionedPlatformComponentsResponse(r.URL.Query())))
+	w.Write(structToJSONByteArray(GetVersionedPlatformPlaneComponentsResponse(mux.Vars(r), r.URL.Query())))
 }
 
-func GetVersionedPlatformComponentsResponse(queryParams url.Values) models.ResponseVersionedPlatformComponents {
+func GetVersionedPlatformPlaneComponentsResponse(pathParams map[string]string, queryParams url.Values) models.ResponsePlaneComponents {
 
+	var version string
+	var plane string
 	url := queryParams.Get("url")
-	version := queryParams.Get("version")
 
-	versionedPlatformComponents := models.VersionedPlatformComponents{}
-
-	platformComponents, err := GetStructuredPlatformComponents(url)
-	if err != nil {
-		return models.ResponseVersionedPlatformComponents{
-			Success: false,
-			Message: err.Error(),
-		}
-	}
-
-	if val, ok := platformComponents.Versions[version]; ok {
-		versionedPlatformComponents = val
+	if val, ok := pathParams["version"]; ok {
+		version = val
 	} else {
-		return models.ResponseVersionedPlatformComponents{
+		return models.ResponsePlaneComponents{
 			Success: false,
-			Message: "Selected platform version '" + version + "' is not found.",
+			Message: "Version is not identified in path.",
 		}
 	}
 
-	return models.ResponseVersionedPlatformComponents{
-		Success:  true,
-		Message:  "Components are listed of an active/available version of the robolaunch ICP.",
-		Response: &versionedPlatformComponents,
+	if val, ok := pathParams["plane"]; ok {
+		plane = val
+	} else {
+		return models.ResponsePlaneComponents{
+			Success: false,
+			Message: "Plane is not identified in path.",
+		}
 	}
-}
 
-// *****VersionedPlatformComputePlaneComponents*****
-
-func GetVersionedPlatformComputePlaneComponents(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
-	w.WriteHeader(http.StatusOK)
-	w.Write(structToJSONByteArray(GetVersionedPlatformComputePlaneComponentsResponse(r.URL.Query())))
-}
-
-func GetVersionedPlatformComputePlaneComponentsResponse(queryParams url.Values) models.ResponsePlaneComponents {
-
-	url := queryParams.Get("url")
-	version := queryParams.Get("version")
-
-	versionedPlatformComponents := models.VersionedPlatformComponents{}
+	versionedPlatformPlaneComponents := models.PlaneComponents{}
 
 	platformComponents, err := GetStructuredPlatformComponents(url)
 	if err != nil {
@@ -107,8 +88,15 @@ func GetVersionedPlatformComputePlaneComponentsResponse(queryParams url.Values) 
 		}
 	}
 
-	if val, ok := platformComponents.Versions[version]; ok {
-		versionedPlatformComponents = val
+	if vpc, ok := platformComponents.Versions[version]; ok {
+		if pc, ok2 := vpc[plane]; ok2 {
+			versionedPlatformPlaneComponents = pc
+		} else {
+			return models.ResponsePlaneComponents{
+				Success: false,
+				Message: "Selected plane '" + plane + "' is not found for version " + version + ".",
+			}
+		}
 	} else {
 		return models.ResponsePlaneComponents{
 			Success: false,
@@ -118,85 +106,8 @@ func GetVersionedPlatformComputePlaneComponentsResponse(queryParams url.Values) 
 
 	return models.ResponsePlaneComponents{
 		Success:  true,
-		Message:  "Compute plane components are listed for an active/available version of the robolaunch ICP.",
-		Response: versionedPlatformComponents.ComputePlane,
-	}
-}
-
-// *****VersionedPlatformControlPlaneComponents*****
-
-func GetVersionedPlatformControlPlaneComponents(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
-	w.WriteHeader(http.StatusOK)
-	w.Write(structToJSONByteArray(GetVersionedPlatformControlPlaneComponentsResponse(r.URL.Query())))
-}
-
-func GetVersionedPlatformControlPlaneComponentsResponse(queryParams url.Values) models.ResponsePlaneComponents {
-
-	url := queryParams.Get("url")
-	version := queryParams.Get("version")
-
-	versionedPlatformComponents := models.VersionedPlatformComponents{}
-
-	platformComponents, err := GetStructuredPlatformComponents(url)
-	if err != nil {
-		return models.ResponsePlaneComponents{
-			Success: false,
-			Message: err.Error(),
-		}
-	}
-
-	if val, ok := platformComponents.Versions[version]; ok {
-		versionedPlatformComponents = val
-	} else {
-		return models.ResponsePlaneComponents{
-			Success: false,
-			Message: "Selected platform version '" + version + "' is not found.",
-		}
-	}
-
-	return models.ResponsePlaneComponents{
-		Success:  true,
-		Message:  "Control plane components are listed for an active/available version of the robolaunch ICP.",
-		Response: versionedPlatformComponents.ControlPlane,
-	}
-}
-
-// *****VersionedPlatformEdgeComponents*****
-
-func GetVersionedPlatformEdgeComponents(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
-	w.WriteHeader(http.StatusOK)
-}
-
-func GetVersionedPlatformEdgeComponentsResponse(queryParams url.Values) models.ResponsePlaneComponents {
-
-	url := queryParams.Get("url")
-	version := queryParams.Get("version")
-
-	versionedPlatformComponents := models.VersionedPlatformComponents{}
-
-	platformComponents, err := GetStructuredPlatformComponents(url)
-	if err != nil {
-		return models.ResponsePlaneComponents{
-			Success: false,
-			Message: err.Error(),
-		}
-	}
-
-	if val, ok := platformComponents.Versions[version]; ok {
-		versionedPlatformComponents = val
-	} else {
-		return models.ResponsePlaneComponents{
-			Success: false,
-			Message: "Selected platform version '" + version + "' is not found.",
-		}
-	}
-
-	return models.ResponsePlaneComponents{
-		Success:  true,
-		Message:  "Edge components are listed for an active/available version of the robolaunch ICP.",
-		Response: versionedPlatformComponents.ControlPlane,
+		Message:  "Selected plane components are listed for an active/available version of the robolaunch ICP.",
+		Response: &versionedPlatformPlaneComponents,
 	}
 }
 
