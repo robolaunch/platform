@@ -1,0 +1,15 @@
+platform: robolaunch Industrial Cloud Platform
+contact:
+  website: https://robolaunch.io
+  github: github.com/robolaunch
+  x: x.com/robolaunch
+maintainers:
+- "@mkcetinkaya"
+- "@hgtunc"
+- "@tunahanertekin"
+- "@sariozgecan"
+- "@gokhangunduz"
+versions:
+- date: "2024-01-01"
+  version: 0.1.2-prerelease.10
+  docs: "docs url for 0.1.2-prerelease.10"
