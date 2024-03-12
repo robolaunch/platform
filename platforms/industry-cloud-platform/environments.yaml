@@ -102,7 +102,7 @@ versions:
             description: "Dive into the realm of deep learning with the PyTorch environment on robolaunch. Develop, train, and deploy neural networks seamlessly using PyTorch's flexible and powerful framework."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/pytorch-logo.png"
           devspace:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -112,7 +112,7 @@ versions:
             description: "Dive into the realm of deep learning with the PyTorch environment on robolaunch. Develop, train, and deploy neural networks seamlessly using PyTorch's flexible and powerful framework."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/pytorch-logo.png"
           devspace:
-            ubuntuDistro: jammy
+            ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -122,7 +122,7 @@ versions:
             description: "Get hands-on with YOLOv4 in this Kubernetes-native environment on robolaunch. Train models with Torch, accelerate processing with GPU support, deploy inference servers seamlessly, and enjoy complete OpenCV support. Your go-to workspace for mastering YOLOv4."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/yolo-logo.png"
           devspace:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -132,7 +132,7 @@ versions:
             description: "Get hands-on with YOLOv4 in this Kubernetes-native environment on robolaunch. Train models with Torch, accelerate processing with GPU support, deploy inference servers seamlessly, and enjoy complete OpenCV support. Your go-to workspace for mastering YOLOv4."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/yolo-logo.png"
           devspace:
-            ubuntuDistro: jammy
+            ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -142,7 +142,7 @@ versions:
             description: "Dive into YOLOv5 in this Kubernetes-native setup on robolaunch. Utilize Torch for model training, expedite processing with GPU support, deploy inference servers effortlessly, and benefit from comprehensive OpenCV support. Your practical workspace for mastering YOLOv5."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/yolo-logo.png"
           devspace:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -152,7 +152,7 @@ versions:
             description: "Dive into YOLOv5 in this Kubernetes-native setup on robolaunch. Utilize Torch for model training, expedite processing with GPU support, deploy inference servers effortlessly, and benefit from comprehensive OpenCV support. Your practical workspace for mastering YOLOv5."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/yolo-logo.png"
           devspace:
-            ubuntuDistro: jammy
+            ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -162,7 +162,7 @@ versions:
             description: "Immerse yourself in YOLOv7 with this Kubernetes-native setup on robolaunch. Employ Torch for model training, accelerate processing using GPU support, seamlessly deploy inference servers, and take advantage of comprehensive OpenCV support. Your practical workspace for mastering YOLOv7."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/yolo-logo.png"
           devspace:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -172,7 +172,7 @@ versions:
             description: "Immerse yourself in YOLOv7 with this Kubernetes-native setup on robolaunch. Employ Torch for model training, accelerate processing using GPU support, seamlessly deploy inference servers, and take advantage of comprehensive OpenCV support. Your practical workspace for mastering YOLOv7."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/yolo-logo.png"
           devspace:
-            ubuntuDistro: jammy
+            ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -182,7 +182,7 @@ versions:
             description: "Step into the world of advanced object detection with the YOLOv8 environment on robolaunch. Train and deploy cutting-edge models seamlessly, leveraging the power of YOLOv8's state-of-the-art architecture."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/yolo-logo.png"
           devspace:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -192,7 +192,7 @@ versions:
             description: "Step into the world of advanced object detection with the YOLOv8 environment on robolaunch. Train and deploy cutting-edge models seamlessly, leveraging the power of YOLOv8's state-of-the-art architecture."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/yolo-logo.png"
           devspace:
-            ubuntuDistro: jammy
+            ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.19"
       data-science:
@@ -206,7 +206,7 @@ versions:
             description: "Explore the capabilities of Apache Spark with PySpark in this dedicated environment on robolaunch. Designed for seamless integration, it's equipped for big data processing, allowing you to harness the power of Spark's distributed computing. Develop and execute PySpark applications effortlessly within this technical workspace tailored for robust data processing on robolaunch."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/apache-spark-logo.png"
           devspace:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -216,7 +216,7 @@ versions:
             description: "Explore the capabilities of Apache Spark with PySpark in this dedicated environment on robolaunch. Designed for seamless integration, it's equipped for big data processing, allowing you to harness the power of Spark's distributed computing. Develop and execute PySpark applications effortlessly within this technical workspace tailored for robust data processing on robolaunch."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/apache-spark-logo.png"
           devspace:
-            ubuntuDistro: jammy
+            ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -226,7 +226,7 @@ versions:
             description: "Enter the world of data science with the KNIME environment on robolaunch. Explore, analyze, and visualize data effortlessly with KNIME's intuitive workflow-based platform."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/knime-logo.png"
           devspace:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -236,7 +236,7 @@ versions:
             description: "Enter the world of data science with the KNIME environment on robolaunch. Explore, analyze, and visualize data effortlessly with KNIME's intuitive workflow-based platform."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/knime-logo.png"
           devspace:
-            ubuntuDistro: jammy
+            ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.19"
       simulation:
@@ -274,7 +274,7 @@ versions:
             description: "Seamlessly design, model, and render stunning visuals with Blender's comprehensive suite of tools. This dedicated workspace on robolaunch is your gateway to unleashing your creativity and bringing your artistic visions to life in the world of 3D graphics."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/blender-logo.png"
           devspace:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -284,7 +284,7 @@ versions:
             description: "Seamlessly design, model, and render stunning visuals with Blender's comprehensive suite of tools. This dedicated workspace on robolaunch is your gateway to unleashing your creativity and bringing your artistic visions to life in the world of 3D graphics."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/blender-logo.png"
           devspace:
-            ubuntuDistro: jammy
+            ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -294,7 +294,7 @@ versions:
             description: "Unlock the power of CAD design with the LibreCAD environment on robolaunch. Seamlessly create precise 2D drawings, drafts, and schematics with LibreCAD's intuitive interface and extensive feature set."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/librecad-logo.png"
           devspace:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -304,7 +304,7 @@ versions:
             description: "Unlock the power of CAD design with the LibreCAD environment on robolaunch. Seamlessly create precise 2D drawings, drafts, and schematics with LibreCAD's intuitive interface and extensive feature set."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/librecad-logo.png"
           devspace:
-            ubuntuDistro: jammy
+            ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -314,7 +314,7 @@ versions:
             description: "Experience the world of computer-aided design with the QCAD environment on robolaunch. Create precise 2D drawings, blueprints, and schematics with QCAD's user-friendly interface and powerful features."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/qcad-logo.png"
           devspace:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -324,7 +324,7 @@ versions:
             description: "Experience the world of computer-aided design with the QCAD environment on robolaunch. Create precise 2D drawings, blueprints, and schematics with QCAD's user-friendly interface and powerful features."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/qcad-logo.png"
           devspace:
-            ubuntuDistro: jammy
+            ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -334,7 +334,7 @@ versions:
             description: "Delve into electronic design with the KiCad environment on robolaunch. Craft intricate schematics, design PCB layouts, and simulate circuits with KiCad's comprehensive suite of tools."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/kicad-logo.png"
           devspace:
-            ubuntuDistro: focal
+            ubuntu: focal
             desktop: xfce
             version: "0.2.6-alpha.19"
         - application:
@@ -344,6 +344,6 @@ versions:
             description: "Delve into electronic design with the KiCad environment on robolaunch. Craft intricate schematics, design PCB layouts, and simulate circuits with KiCad's comprehensive suite of tools."
             icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/kicad-logo.png"
           devspace:
-            ubuntuDistro: jammy
+            ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.19"
