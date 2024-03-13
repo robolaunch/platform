@@ -19,7 +19,13 @@ To see how to make this your own, look here:
 ### Running the server
 To run the server, follow these simple steps:
 
-```
+```bash
 go run main.go
 ```
 
+### Building server image
+To build server image, use the command below:
+
+```bash
+docker build . -t robolaunchio/platform-server:$(git rev-parse HEAD)
+```
