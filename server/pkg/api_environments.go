@@ -197,7 +197,7 @@ func GetVersionedPlatformImagesResponse(pathParams map[string]string, queryParam
 		}
 	} else {
 		return models.ResponseVersionedPlatformImages{
-			Success: true,
+			Success: false,
 			Message: "Selected platform version '" + version + "' is not found.",
 		}
 	}
