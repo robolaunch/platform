@@ -17,3 +17,13 @@ versions:
             ubuntu: jammy
             desktop: xfce
             version: "0.2.6-alpha.19"
+        - application:
+            name: edge-proxy
+            version: "1.7.4.1-3ubuntu4"
+            alias: "Edge Proxy"
+            description: "Edge proxy relays services bi-directionally."
+            icon: "https://raw.githubusercontent.com/robolaunch/trademark/main/applications/edge-proxy-logo.png"
+          base:
+            ubuntu: jammy
+            desktop: xfce
+            version: "0.2.6-alpha.20"
